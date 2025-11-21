@@ -52,10 +52,10 @@ export const DEFAULT_RECORDING_CONFIG = {
 
 export const BUNNY = {
   STREAM_BASE_URL: "https://video.bunnycdn.com/library",
-  STORAGE_BASE_URL: "https://sg.storage.bunnycdn.com/snapcast",
-  CDN_URL: "https://snapcast.b-cdn.net",
+  STORAGE_BASE_URL: "https://storage.bunnycdn.com/kunal-snapcast",
+  CDN_URL: "https://kunal-snapcast.b-cdn.net",
   EMBED_URL: "https://iframe.mediadelivery.net/embed",
-  TRANSCRIPT_URL: "https://vz-47a08e64-84d.b-cdn.net",
+  TRANSCRIPT_URL: "https://vz-7719e1ad-004.b-cdn.net",
 };
 
 // export const emojis = ["😂", "😍", "👍"];
