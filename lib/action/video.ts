@@ -8,7 +8,7 @@ import { and, desc, eq, ilike, or, sql } from "drizzle-orm";
 import { auth } from "@/lib/auth";
 import {apiFetch, doesTitleMatch, getEnv, getOrderByClause, withErrorHandling} from "@/lib/utils";
 import { BUNNY } from "@/constants";
-// import aj, { fixedWindow, request } from "../arcjet";
+import aj, { fixedWindow, request } from "../arcjet";
 
 // Constants with full names
 const VIDEO_STREAM_BASE_URL = BUNNY.STREAM_BASE_URL;
@@ -25,7 +25,7 @@ const validateWithArcjet = async (fingerPrint: string) => {
     fixedWindow({
       mode: "LIVE",
       window: "1m",
-      max: 2,
+      max: 1,
       characteristics: ["fingerprint"],
     })
   );
@@ -93,7 +93,7 @@ export const getThumbnailUploadUrl = withErrorHandling(
 export const saveVideoDetails = withErrorHandling(
   async (videoDetails: VideoDetails) => {
     const userId = await getSessionUserId();
-    // await validateWithArcjet(userId);
+    await validateWithArcjet(userId);
     await apiFetch(
       `${VIDEO_STREAM_BASE_URL}/${BUNNY_LIBRARY_ID}/videos/${videoDetails.videoId}`,
       {
