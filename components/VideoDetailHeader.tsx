@@ -58,7 +58,7 @@ const VideoDetailHeader = ({
   };
 
   const copyLink = () => {
-    navigator.clipboard.writeText(`${window.location.origin}/video/${videoId}`);
+    navigator.clipboard.writeText(`${window.location.origin}/video/${id}`);
     setCopied(true);
   };
 

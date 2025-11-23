@@ -8,8 +8,8 @@ import { redirect } from "next/navigation";
 
 const page = async ({ params }: Params) => {
   const { videoId } = await params;
-
-  const { user, video } = await getVideoById(videoId);
+  console.log(videoId);
+  const { user , video } = await getVideoById(videoId);
   if (!video) redirect("/404");
 
   const transcript = await getTranscript(videoId);
@@ -17,6 +17,7 @@ const page = async ({ params }: Params) => {
   return (
     <main className="wrapper page">
       <VideoDetailHeader
+        id={video.id}
         title={video.title}
         createdAt={video.createdAt}
         userImg={user?.image}
